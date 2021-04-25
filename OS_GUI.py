@@ -279,7 +279,7 @@ class Sys(tkinter.Frame):
                 self.labelQuantum = Label(self.parent, text = "Quantum Time:", font = ("Cambria", 12))
                 self.labelQuantum.place(relx = 0.417, rely = r_label)
                 self.entryQuantum = Entry(self.parent, textvariable = self.quantumTime, validate = "key", width = 5, font = ("Cambria", 12))
-                self.entryQuantum['validatecommand'] = (self.entry2.register(self.testFloat), '%P', '%d')
+                self.entryQuantum['validatecommand'] = (self.entry2.register(self.testFloat1), '%P', '%d')
                 self.entryQuantum.place(relx = 0.543, rely = r_entry)
                 r_label += 0.05
                 r_entry += 0.05
