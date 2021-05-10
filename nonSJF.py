@@ -1,3 +1,5 @@
+# Non Pre-emptive shortest job first schedualing method
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import random
@@ -6,7 +8,8 @@ def execute (to_draw_list,ind_list):
     start = 0
     end = 0
     total_time_so_far = 0
-    total_waiting_time = 0 
+    total_waiting_time = 0
+    
     # Declaring a figure "gnt"
     fig, gnt = plt.subplots()
     # Setting Y-axis limits
@@ -20,6 +23,8 @@ def execute (to_draw_list,ind_list):
     gnt.grid(False)
     # Declaring multiple bars in at same level and same width
     height=max(to_draw_list, key = lambda t: t[1])[1]
+    
+    # Drawing loop
     for i in range (len(to_draw_list)):
         if to_draw_list[i][0]<=total_time_so_far :
             start += end
@@ -82,26 +87,3 @@ def non_pre_epmtive_SJF(arrival_time,duration):
         ind_list.append(temp.index(to_draw_list[i])+1)
         temp[temp.index(to_draw_list[i])] = [0,0]
     execute(to_draw_list,ind_list)
-
-
-# A = [1,30,90,90]
-# D = [10,20,50,40]
-
-# non_pre_epmtive_SJF(A,D)
-
-
-#"""map = {}
-#    for i in range (len(arrival_time)):
-#        map.setdefault(arrival_time[i],set()).add(duration[i])"""
-
-
-#""" for i in arrival_time:
-#        if arrival_time[i] == min:
-#            list.append(duration[i])
-#    while 1:
-#        execute(min(waiting_list),consumed_time)
-#        consumed_time += min(waiting_list)
-
-#        for i in range (len(arrival_time)):
-#            if arrival[i] < consumed_time:
-#                waiting_list.append(duration[i])
